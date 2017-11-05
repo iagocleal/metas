@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CRUD com Bootstrap 3</title>
+
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/geral.css" rel="stylesheet">
+</head>
+<body style="background-color: #E6E6FA;">
+
+	<script src="../js/jquery.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/cadmetas.js"></script>
+
+	<div id="main" class="container-fluid">
+
+		<form action="verMetas.html">
+
+			<div class="div-interna">
+
+				<h2>
+					<font color="gray">NOVA META:</font>
+				</h2>
+
+				<div class="row">
+					<div class="form-group col-md-4">
+						<label for="campo1">Tipo</label> <select class="form-control"
+							name="tipo" id="cadTipo">
+							<option value="0">SELECIONE</option>
+						</select>
+
+					</div>
+
+					<div class="form-group col-md-4">
+						<label for="campo2">Orgão</label> <select class="form-control"
+							name="orgao" id="cadOrgao" onchange="changeOrgao();">
+							<option value="0">SELECIONE</option>
+						</select>
+					</div>
+
+					<div class="form-group col-md-4">
+						<label for="campo3">Setor</label> <select class="form-control"
+							name="setor" id="cadSetor">
+							<option value="0">SELECIONE</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group col-md-4">
+						<label for="campo1">Meta Relacionada</label> <select
+							class="form-control" name="metaRelacionada"
+							id="cadMetaRelacionada">
+							<option value="0">SELECIONE</option>
+						</select>
+					</div>
+
+					<div class="form-group col-md-8">
+						<label for="campo2">Descrição</label> <input type="text"
+							class="form-control" id="cadDescricao" />
+					</div>
+				</div>
+
+				<hr />
+				<div id="actions" class="row">
+					<div class="col-md-12">
+						<button id="btnSalvar" type="button" class="btn btn-default" onclick="salvarForm()">Salvar</button>
+						<a href="verMetas.html" class="btn btn-default">Cancelar</a>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

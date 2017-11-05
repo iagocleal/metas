@@ -1,0 +1,22 @@
+{
+	"meta": [{
+		"tipoMeta": {
+			"id": "1",
+			"descricao": "indicador"
+		},
+		"metaRelacionada": {
+			"id": "2",
+			"descricao": "meta relacionada"
+		},
+		"orgao": {
+			"id": "3",
+			"descricao": "SEPOG"
+		},
+		"setor": {
+			"id": "4",
+			"descricao": "TI"
+		},
+		"id": "4",
+		"descricao": "meta"
+	}]
+}
