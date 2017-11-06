@@ -4,9 +4,20 @@
 	margin-top: 16px;
 }
 
-.div_erro {
+.div_mensagem {
 	border: 1px solid #EBCCD1;
 	background-color: #FEFE96;
+	font-family: verdana;
+	font-size: 13px;
+	color: #A94442;
+	width: 100%;
+	padding: 10px 10px;
+	position: relative;
+}
+
+.div_erro {
+	border: 1px solid #EBCCD1;
+	background-color: #FFA07A;
 	font-family: verdana;
 	font-size: 13px;
 	color: #A94442;

@@ -128,15 +128,23 @@ public class MetaDAO {
 		}
 	}
 	
-	public void excluir(Long idMeta){
+	public Boolean excluir(Long idMeta){
 		EntityManager entityManager = null;
 		try {
 			entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
 
 			entityManager.getTransaction().begin();		
-			Meta metaRemover = entityManager.find(Meta.class, idMeta);			
-			entityManager.remove(metaRemover);
-			entityManager.getTransaction().commit();
+			Meta metaRemover = entityManager.find(Meta.class, idMeta);
+			
+			Boolean temDependencia = verificarDependencia(metaRemover);
+			
+			if(!temDependencia){
+				entityManager.remove(metaRemover);
+				entityManager.getTransaction().commit();
+				return true;
+			}
+			
+			return false;
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -146,5 +154,28 @@ public class MetaDAO {
 		} finally {
 			entityManager.close();
 		}
+		return false;
+	}
+
+	private boolean verificarDependencia(Meta metaRemover) {
+		EntityManager entityManager = null;
+		entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
+		
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append("FROM Meta m WHERE m.metaRelacionada.id = :idMeta");
+		
+		Query q = entityManager.createQuery(sb.toString());
+		
+		q.setParameter("idMeta", metaRemover.getId());
+
+		List<Meta> lstMeta = q.getResultList();
+		
+		if(lstMeta != null && !lstMeta.isEmpty())
+		{
+			return true;
+		}
+
+		return false;
 	}
 }

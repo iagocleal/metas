@@ -72,8 +72,7 @@ public class MetaService {
 	@Produces("application/json")
 	public Response excluirMeta(@QueryParam("idMeta") Long idMeta) {
 		MetaDAO metaDAO = new MetaDAO();
-		metaDAO.excluir(idMeta);
-		return Response.ok().build();
+		return Response.ok(metaDAO.excluir(idMeta)).build();
 	}
 
 }

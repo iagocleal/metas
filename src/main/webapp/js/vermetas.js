@@ -35,8 +35,13 @@ function excluirSelecionado(id){
 		type: "GET",
 		url: "http://localhost:8080/metas/rest/meta/excluirMeta?idMeta=" + $('#excluirMeta').val(),
 		success: function(data){
-			console.log("excluiu");
-			window.location = "verMetas.html";
+			if(!data){
+				$("#divMensagemVer").attr("hidden", false);
+				$("#mensagemVer").html("Impossível excluir, pois a meta selecionada está relacionada a outra meta!");
+				$('#delete-modal').modal('hide')
+			}else {
+				window.location = "verMetas.html";
+			}
 		},
 		error: function(e){
 			alert("Erro: " + e);

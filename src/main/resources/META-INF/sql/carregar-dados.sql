@@ -19,4 +19,3 @@ insert into setor( id_setor, id_orgao, descricao) values (6, 1,'LOGISTICA');
 insert into TIPO_META (ID_TIPO_META , DESCRICAO ) values (1,'PRODUTIVIDADE');
 insert into TIPO_META (ID_TIPO_META , DESCRICAO ) values (2,'QUALIDADE');
 insert into TIPO_META (ID_TIPO_META , DESCRICAO ) values (3,'IMPACTO');
-
