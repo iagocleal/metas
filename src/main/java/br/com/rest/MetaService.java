@@ -23,7 +23,7 @@ public class MetaService {
 	
 	@Transactional
 	@GET
-	@Path("/getMetaRelacionada")
+	@Path("/metaRelacionada")
 	@Produces("application/json")
 	public Response getMetaRelacionada(@QueryParam("seqOrgao") Long seqOrgao) {
 		MetaDAO metaDAO = new MetaDAO();
@@ -32,7 +32,7 @@ public class MetaService {
 	
 	@Transactional
 	@GET
-	@Path("/getLstMetas")
+	@Path("/lstMetas")
 	@Produces("application/json")
 	public Response getLstMetas() {
 		MetaDAO metaDAO = new MetaDAO();
@@ -45,7 +45,9 @@ public class MetaService {
 	public List<Meta> salvarMeta(Meta meta) {
 		MetaDAO metaDAO = new MetaDAO();
 		
-		if(meta.getMetaRelacionada() != null && meta.getMetaRelacionada().getId().equals(0L)){
+		if(meta.getMetaRelacionada() != null 
+			&& meta.getMetaRelacionada().getId() != null
+			&& meta.getMetaRelacionada().getId().equals(0L)){
 			meta.setMetaRelacionada(null);
 		}
 		
@@ -62,7 +64,7 @@ public class MetaService {
 	
 	@Transactional
 	@GET
-	@Path("/getMetaById")
+	@Path("/metaById")
 	@Produces("application/json")
 	public Response getMetaById(@QueryParam("idMeta") Long idMeta) {
 		MetaDAO metaDAO = new MetaDAO();

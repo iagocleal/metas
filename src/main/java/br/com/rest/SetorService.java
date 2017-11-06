@@ -20,7 +20,7 @@ public class SetorService {
 	
 	@Transactional
 	@GET
-	@Path("/getSetor")
+	@Path("/setor")
 	@Produces("application/json")
 	public Response getSetor(@QueryParam("seqOrgao") Long seqOrgao) {
 		SetorDAO setorDAO = new SetorDAO();

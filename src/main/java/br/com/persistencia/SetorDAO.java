@@ -15,7 +15,7 @@ public class SetorDAO {
 		
 		StringBuilder sb = new StringBuilder();
 		
-		sb.append("FROM Setor s WHERE s.orgao.id = :seqOrgao");
+		sb.append("FROM Setor s WHERE s.orgao.id = :seqOrgao ORDER BY s.descricao");
 		
 		Query q = entityManager.createQuery(sb.toString());
 		

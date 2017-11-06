@@ -18,7 +18,7 @@ public class OrgaoService {
 	
 	@Transactional
 	@GET
-	@Path("/getOrgao")
+	@Path("/orgao")
 	@Produces("application/json")
 	public Response getOrgao() {		
 		OrgaoDAO orgaoDAO = new OrgaoDAO();

@@ -13,7 +13,7 @@ public class OrgaoDAO {
 	public List<Orgao> buscarListaOrgao() {
 		EntityManager entityManager = null;
 		entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
-		Query q = entityManager.createQuery("SELECT o FROM Orgao o");
+		Query q = entityManager.createQuery("SELECT o FROM Orgao o ORDER BY o.descricao");
 
 		List<Orgao> lstOrgao = q.getResultList();
 		

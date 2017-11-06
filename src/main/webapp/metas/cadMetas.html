@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CRUD com Bootstrap 3</title>
+<title>Cadastro de Metas</title>
 
 <link href="../css/bootstrap.min.css" rel="stylesheet">
 <link href="../css/geral.css" rel="stylesheet">
@@ -20,6 +20,10 @@
 		<form action="verMetas.html">
 
 			<div class="div-interna">
+
+				<div id="divMensagem" class="div_erro" hidden="true">
+					<span id="mensagem" class="erro">Erro..</span> <span id="fechar" class="fechar">X</span>
+				</div>
 
 				<h2>
 					<font color="gray">NOVA META:</font>
@@ -67,7 +71,7 @@
 				<hr />
 				<div id="actions" class="row">
 					<div class="col-md-12">
-						<button id="btnSalvar" type="button" class="btn btn-default" onclick="salvarForm()">Salvar</button>
+						<button id="btnSalvar" type="button" class="btn btn-default">Salvar</button>
 						<a href="verMetas.html" class="btn btn-default">Cancelar</a>
 					</div>
 				</div>

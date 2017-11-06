@@ -21,7 +21,7 @@ public class TipoMetaService {
 	
 	@Transactional
 	@GET
-	@Path("/getTipoMeta")
+	@Path("/tipoMeta")
 	@Produces("application/json")
 	public Response getTipoMeta() {
 		TipoMetaDAO tipoMetaDAO = new TipoMetaDAO();

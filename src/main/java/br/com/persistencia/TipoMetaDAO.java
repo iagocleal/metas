@@ -12,7 +12,7 @@ public class TipoMetaDAO {
 	public List<TipoMeta> buscarListaTipoMeta() {
 		EntityManager entityManager = null;
 		entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
-		Query q = entityManager.createQuery("From TipoMeta");
+		Query q = entityManager.createQuery("SELECT tm From TipoMeta tm ORDER BY tm.descricao");
 
 		List<TipoMeta> lstTipoMeta = q.getResultList();
 		

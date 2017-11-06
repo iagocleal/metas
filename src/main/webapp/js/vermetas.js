@@ -2,7 +2,7 @@ $(document).ready(function(){
 	
 	$.ajax({
 		type: "GET",
-		url: "http://localhost:8080/metas/rest/meta/getLstMetas",
+		url: "http://localhost:8080/metas/rest/meta/lstMetas",
 		success: function(data){			
 			var $trHTML = $("#tblMetas");
 			$.each(data, function (i, item) {
