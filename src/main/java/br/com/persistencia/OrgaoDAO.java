@@ -24,5 +24,26 @@ public class OrgaoDAO {
 
 		return null;
 	}
+	
+	public void salvar(Orgao orgao){
+		EntityManager entityManager = null;
+		try {
+			entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
+
+			entityManager.getTransaction().begin();
+			entityManager.persist(orgao);
+			entityManager.getTransaction().commit();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			if (entityManager != null) {
+				System.out.println("Transaction is being rolled back.");
+			}
+		} finally {
+			if(entityManager != null){
+				entityManager.close();
+			}
+		}
+	}
 
 }
