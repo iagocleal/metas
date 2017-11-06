@@ -10,7 +10,7 @@
 
 		<!-- Desenvolvimento -->
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<jta-data-source>java:jboss/datasources/TestDS</jta-data-source>
+		<jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
 
 		<class>br.com.entidade.Meta</class>
 		<class>br.com.entidade.Orgao</class>
