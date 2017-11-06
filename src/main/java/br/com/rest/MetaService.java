@@ -21,7 +21,6 @@ public class MetaService {
 		return "REST OK";
 	}
 	
-	@Transactional
 	@GET
 	@Path("/metaRelacionada")
 	@Produces("application/json")
@@ -30,7 +29,6 @@ public class MetaService {
 		return Response.ok(metaDAO.buscarListaMetaRelacionada(seqOrgao)).build();
 	}
 	
-	@Transactional
 	@GET
 	@Path("/lstMetas")
 	@Produces("application/json")
@@ -39,7 +37,6 @@ public class MetaService {
 		return Response.ok(metaDAO.buscarListaMeta()).build();
 	}
 	
-	@Transactional
 	@POST
 	@Path("/salvarMeta")
 	public List<Meta> salvarMeta(Meta meta) {
@@ -62,7 +59,6 @@ public class MetaService {
 		return null;
 	}
 	
-	@Transactional
 	@GET
 	@Path("/metaById")
 	@Produces("application/json")
@@ -71,7 +67,6 @@ public class MetaService {
 		return Response.ok(metaDAO.buscarListaMetaById(idMeta)).build();
 	}
 	
-	@Transactional
 	@GET
 	@Path("/excluirMeta")
 	@Produces("application/json")

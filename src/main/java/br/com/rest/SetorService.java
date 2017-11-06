@@ -18,7 +18,6 @@ public class SetorService {
 		return "REST OK";
 	}
 	
-	@Transactional
 	@GET
 	@Path("/setor")
 	@Produces("application/json")

@@ -16,7 +16,6 @@ public class OrgaoService {
 		return "REST OK";
 	}
 	
-	@Transactional
 	@GET
 	@Path("/orgao")
 	@Produces("application/json")

@@ -19,7 +19,6 @@ public class TipoMetaService {
 		return "REST OK";
 	}
 	
-	@Transactional
 	@GET
 	@Path("/tipoMeta")
 	@Produces("application/json")
